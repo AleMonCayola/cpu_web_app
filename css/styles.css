@@ -396,11 +396,6 @@ body {
   color: #991b1b;
 }
 
-/* ==========================================
-   ESTILOS PARA MENÚ MÓVIL Y RESPONSIVE
-   ========================================== */
-
-/* Elementos móviles ocultos por defecto en escritorio */
 .mobile-header, 
 .sidebar-overlay,
 .close-sidebar-btn {
@@ -418,10 +413,9 @@ body {
   padding-bottom: 0 !important;
 }
 
-/* Adaptación para Pantallas Pequeñas y Celulares (<= 768px) */
 @media (max-width: 768px) {
   body {
-    overflow: auto; /* Permitir scroll vertical en móviles */
+    overflow: auto;
   }
 
   .app-container {
@@ -461,7 +455,7 @@ body {
   .sidebar {
     position: fixed;
     top: 0;
-    left: -280px; /* Oculto fuera de pantalla */
+    left: -280px;
     width: 260px;
     height: 100%;
     z-index: 1001;
@@ -470,7 +464,7 @@ body {
   }
 
   .sidebar.open {
-    left: 0; /* Deslizar hacia adentro */
+    left: 0;
   }
 
   .close-sidebar-btn {
@@ -506,7 +500,6 @@ body {
     padding: 15px;
   }
 
-  /* Adaptación de Formularios y Grids en Pantallas Pequeñas */
   .grid-2, .grid-3 {
     grid-template-columns: 1fr !important;
   }
@@ -521,7 +514,6 @@ body {
     width: 100%;
   }
 
-  /* Permitir scroll horizontal en tablas */
   .card {
     overflow-x: auto;
   }
@@ -529,4 +521,68 @@ body {
   .print-columns {
     grid-template-columns: 1fr;
   }
+}
+
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-card h2 {
+  color: var(--text-main);
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.login-subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.login-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #334155;
+}
+
+.btn-logout {
+  color: #f87171 !important;
+}
+
+.btn-logout:hover {
+  background-color: #450a0a !important;
+  color: #fca5a5 !important;
 }

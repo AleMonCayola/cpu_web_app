@@ -8,17 +8,38 @@
 </head>
 <body>
 
-  <!-- Overlay para cerrar el menú en móviles al hacer clic fuera -->
+  <!-- Contenedor del Formulario de Login -->
+  <div id="login-container" class="login-container">
+    <div class="login-card">
+      <h2>🔐 Iniciar Sesión</h2>
+      <p class="login-subtitle">Golosinas App</p>
+      
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Correo Electrónico</label>
+          <input type="email" id="login-email" placeholder="usuario@correo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+
+        <div id="login-error" class="login-error" style="display: none;"></div>
+
+        <button type="submit" id="btn-login" class="btn-primary btn-block">Ingresar</button>
+      </form>
+    </div>
+  </div>
+
   <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
-  <div class="app-container">
-    <!-- Barra superior para dispositivos móviles -->
+  <div id="app-container" class="app-container" style="display: none;">
     <header class="mobile-header">
       <button id="mobile-menu-toggle" class="menu-toggle-btn" aria-label="Abrir Menú">☰</button>
       <h2 class="mobile-title">Golosinas App</h2>
     </header>
 
-    <!-- Menú Lateral (Sidebar) -->
     <aside id="sidebar" class="sidebar">
       <div class="sidebar-header">
         <h2>Golosinas App</h2>
@@ -29,6 +50,9 @@
         <button id="btn-calculadora" class="nav-btn">🧮 Calculadora</button>
         <button id="btn-imprimir" class="nav-btn">🖨️ Imprimir Lista</button>
       </nav>
+      <div class="sidebar-footer">
+        <button id="btn-logout" class="nav-btn btn-logout">🚪 Cerrar Sesión</button>
+      </div>
     </aside>
 
     <!-- Área de Contenido Principal -->
