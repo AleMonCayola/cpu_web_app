@@ -586,3 +586,47 @@ body {
   background-color: #450a0a !important;
   color: #fca5a5 !important;
 }
+
+.input-short {
+  max-width: 50px;
+}
+
+/* Ajuste de ancho para los inputs dentro de la tabla de la calculadora */
+.data-table input[type="number"] {
+  width: 50px !important;       /* Controla el ancho de las cajas de venta */
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Evitar que la tabla desborde en móviles */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Ocultar flechitas (steppers) en inputs numéricos */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Ajuste general para la caja de texto en la tabla */
+.data-table input.input-venta {
+  width: 90px !important;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  text-align: right;
+  font-weight: 600;
+}
