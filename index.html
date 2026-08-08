@@ -7,9 +7,23 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <!-- Overlay para cerrar el menú en móviles al hacer clic fuera -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
   <div class="app-container">
-    <aside class="sidebar">
-      <h2>Golosinas App</h2>
+    <!-- Barra superior para dispositivos móviles -->
+    <header class="mobile-header">
+      <button id="mobile-menu-toggle" class="menu-toggle-btn" aria-label="Abrir Menú">☰</button>
+      <h2 class="mobile-title">Golosinas App</h2>
+    </header>
+
+    <!-- Menú Lateral (Sidebar) -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <h2>Golosinas App</h2>
+        <button id="close-sidebar-btn" class="close-sidebar-btn">&times;</button>
+      </div>
       <nav>
         <button id="btn-productos" class="nav-btn active">📦 Productos</button>
         <button id="btn-calculadora" class="nav-btn">🧮 Calculadora</button>
@@ -17,10 +31,10 @@
       </nav>
     </aside>
 
+    <!-- Área de Contenido Principal -->
     <main id="content-area" class="content">
     </main>
   </div>
-
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase-client.js"></script>

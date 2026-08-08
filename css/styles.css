@@ -395,3 +395,138 @@ body {
   background-color: #fee2e2;
   color: #991b1b;
 }
+
+/* ==========================================
+   ESTILOS PARA MENÚ MÓVIL Y RESPONSIVE
+   ========================================== */
+
+/* Elementos móviles ocultos por defecto en escritorio */
+.mobile-header, 
+.sidebar-overlay,
+.close-sidebar-btn {
+  display: none;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* Adaptación para Pantallas Pequeñas y Celulares (<= 768px) */
+@media (max-width: 768px) {
+  body {
+    overflow: auto; /* Permitir scroll vertical en móviles */
+  }
+
+  .app-container {
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* Barra superior móvil */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--sidebar-bg);
+    color: var(--text-light);
+    padding: 12px 18px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .menu-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .mobile-title {
+    font-size: 1.2rem;
+    color: #60a5fa;
+  }
+
+  /* Sidebar tipo "Drawer" deslizante */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Oculto fuera de pantalla */
+    width: 260px;
+    height: 100%;
+    z-index: 1001;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+  }
+
+  .sidebar.open {
+    left: 0; /* Deslizar hacia adentro */
+  }
+
+  .close-sidebar-btn {
+    display: block;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  /* Overlay de fondo */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  /* Adaptación de Formularios y Grids en Pantallas Pequeñas */
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .table-header input {
+    width: 100%;
+  }
+
+  /* Permitir scroll horizontal en tablas */
+  .card {
+    overflow-x: auto;
+  }
+
+  .print-columns {
+    grid-template-columns: 1fr;
+  }
+}
