@@ -1,0 +1,52 @@
+<div class="view-header no-print">
+  <h1>Generador de Lista de Precios</h1>
+</div>
+
+<div class="view-body">
+  <section class="card no-print mb-3">
+    <div class="controls-bar">
+      <div>
+        <label for="titulo-lista"><strong>Título del Cartel:</strong></label>
+        <input type="text" id="titulo-lista" value="LISTA DE PRECIOS" style="width: 320px; padding: 6px; margin-left: 10px;">
+      </div>
+      <div class="btn-group">
+        <button id="btn-ejecutar-imprimir" class="btn-primary">🖨️ Imprimir</button>
+      </div>
+    </div>
+  </section>
+  <div class="print-sheet-container">
+    <div id="hoja-impresion" class="print-sheet">
+      <header class="print-header">
+        <h2 id="print-header-title">LISTA DE PRECIOS</h2>
+        <p class="print-date">Actualizado al: <span id="print-fecha">--/--/----</span></p>
+      </header>
+      <div class="print-columns">
+        <table class="print-table">
+          <thead>
+            <tr>
+              <th class="col-prod">Producto</th>
+              <th class="col-precio text-right">Precio Unit.</th>
+            </tr>
+          </thead>
+          <tbody id="print-tabla-col1">
+          </tbody>
+        </table>
+
+        <table class="print-table">
+          <thead>
+            <tr>
+              <th class="col-prod">Producto</th>
+              <th class="col-precio text-right">Precio Unit.</th>
+            </tr>
+          </thead>
+          <tbody id="print-tabla-col2">
+          </tbody>
+        </table>
+      </div>
+
+      <footer class="print-footer">
+        <p>Precios expresados en Bolivianos (Bs.)</p>
+      </footer>
+    </div>
+  </div>
+</div>

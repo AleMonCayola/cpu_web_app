@@ -1,0 +1,98 @@
+<div class="view-header">
+  <h1>Gestión de Productos</h1>
+</div>
+
+<div class="view-body">
+  <!-- Formulario de Registro -->
+  <section class="card">
+    <h3>Registrar Producto</h3>
+    <form id="form-producto">
+      <div class="form-group">
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" id="nombre" placeholder="Ej: Papas Fritas" required>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="unidades">Unidades por Paquete:</label>
+          <input type="number" id="unidades" min="1" placeholder="Ej: 24" required>
+        </div>
+        <div class="form-group">
+          <label for="precio-paquete">Precio Paquete/Caja (Bs.):</label>
+          <input type="number" step="0.01" id="precio-paquete" placeholder="Ej: 60.00" required>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="precio-unitario">Costo Unitario (Calculado):</label>
+          <input type="number" step="0.01" id="precio-unitario" placeholder="Auto" readonly style="background-color: #e2e8f0;">
+        </div>
+        <div class="form-group">
+          <label for="precio-venta">Precio Venta Unitario (Bs.):</label>
+          <input type="number" step="0.01" id="precio-venta" placeholder="Ej: 3.00" required>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">Guardar Producto</button>
+    </form>
+  </section>
+
+  <!-- Tabla y Buscador -->
+  <section class="card mt-2">
+    <div class="table-header">
+      <h3>Listado de Paquetes Registrados</h3>
+      <input type="text" id="input-buscar" placeholder="🔍 Buscar producto...">
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Unid/Paq</th>
+          <th>Precio Paquete</th>
+          <th>Costo Unit.</th>
+          <th>Precio Venta Unit.</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-productos">
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<div id="modal-editar" class="modal">
+  <div class="modal-content card">
+    <h3>Editar Producto</h3>
+    <form id="form-editar-producto">
+      <input type="hidden" id="edit-id">
+      <div class="form-group">
+        <label for="edit-nombre">Nombre del Producto:</label>
+        <input type="text" id="edit-nombre" required>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="edit-unidades">Unidades por Paquete:</label>
+          <input type="number" id="edit-unidades" min="1" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-precio-paquete">Precio Paquete (Bs.):</label>
+          <input type="number" step="0.01" id="edit-precio-paquete" required>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="edit-precio-unitario">Costo Unitario (Calculado):</label>
+          <input type="number" step="0.01" id="edit-precio-unitario" readonly style="background-color: #e2e8f0;">
+        </div>
+        <div class="form-group">
+          <label for="edit-precio-venta">Precio Venta Unitario (Bs.):</label>
+          <input type="number" step="0.01" id="edit-precio-venta" required>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="btn-cancelar-modal" class="btn-secondary">Cancelar</button>
+        <button type="submit" class="btn-primary">Actualizar Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>
