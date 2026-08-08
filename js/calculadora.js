@@ -31,8 +31,8 @@ function initCalculadora() {
       tr.innerHTML = `
         <td><strong>${p.nombre}</strong></td>
         <td>${unidades} unid.</td>
-        <td>Bs. ${precioPaquete.toFixed(2)}</td>
-        <td>Bs. ${costoUnitario.toFixed(2)}</td>
+        <td>${precioPaquete.toFixed(2)}</td>
+        <td>${costoUnitario.toFixed(2)}</td>
         <td>
           <input 
             type="number" 
@@ -45,8 +45,8 @@ function initCalculadora() {
             style="width: 100px; padding: 5px; text-align: right; border: 1px solid #cbd5e1; border-radius: 4px; transition: background-color 0.3s;"
           >
         </td>
-        <td class="cell-ganancia-unidad">Bs. 0.00</td>
-        <td class="cell-ganancia-total" style="font-weight: bold;">Bs. 0.00</td>
+        <td class="cell-ganancia-unidad">0.00</td>
+        <td class="cell-ganancia-total" style="font-weight: bold;">0.00</td>
       `;
 
       tablaBody.appendChild(tr);
@@ -86,8 +86,8 @@ function initCalculadora() {
     const cellGananciaUnidad = tr.querySelector('.cell-ganancia-unidad');
     const cellGananciaTotal = tr.querySelector('.cell-ganancia-total');
 
-    cellGananciaUnidad.textContent = `Bs. ${gananciaUnidad.toFixed(2)}`;
-    cellGananciaTotal.textContent = `Bs. ${gananciaTotal.toFixed(2)}`;
+    cellGananciaUnidad.textContent = `${gananciaUnidad.toFixed(2)}`;
+    cellGananciaTotal.textContent = `${gananciaTotal.toFixed(2)}`;
 
     if (gananciaUnidad > 0) {
       cellGananciaUnidad.style.color = 'var(--success)';
