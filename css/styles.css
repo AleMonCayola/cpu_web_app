@@ -523,7 +523,6 @@ body {
   }
 }
 
-
 .login-container {
   display: flex;
   justify-content: center;
@@ -591,9 +590,8 @@ body {
   max-width: 50px;
 }
 
-/* Ajuste de ancho para los inputs dentro de la tabla de la calculadora */
 .data-table input[type="number"] {
-  width: 50px !important;       /* Controla el ancho de las cajas de venta */
+  width: 50px !important;
   padding: 6px 8px;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
@@ -601,14 +599,11 @@ body {
   font-weight: 600;
 }
 
-/* Evitar que la tabla desborde en móviles */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
 }
 
-/* Ocultar flechitas (steppers) en inputs numéricos */
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -621,7 +616,6 @@ input[type=number] {
   appearance: textfield;
 }
 
-/* Ajuste general para la caja de texto en la tabla */
 .data-table input.input-venta {
   width: 90px !important;
   padding: 6px 8px;
@@ -629,4 +623,19 @@ input[type=number] {
   border-radius: 4px;
   text-align: right;
   font-weight: 600;
+}
+
+.table-responsive {
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+}
+
+.data-table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f8fafc;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
 }
