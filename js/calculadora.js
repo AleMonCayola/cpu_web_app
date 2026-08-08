@@ -30,7 +30,7 @@ function initCalculadora() {
 
       tr.innerHTML = `
         <td><strong>${p.nombre}</strong></td>
-        <td>${unidades} unid.</td>
+        <td>${unidades} u</td>
         <td>${precioPaquete.toFixed(2)}</td>
         <td>${costoUnitario.toFixed(2)}</td>
         <td>
